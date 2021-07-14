@@ -2,8 +2,6 @@ import pandas as pd
 import re
 
 data = pd.read_csv('jigsaw-toxic-comment-train-processed-seqlen128.csv')
-data = data[['comment_text', 'toxic']]
-data = data.head(100000)
 def clean(text):
     text = text.fillna("fillna").str.lower()
     text = text.map(lambda x: re.sub('[^A-Za-z]',' ',str(x)))
