@@ -4,28 +4,28 @@ stages:
     cmd: python3 get_data.py
     deps:
     - path: get_data.py
-      md5: 366c7d269041774d38cb6bbdd627ab04
-      size: 603
+      md5: 333ac01f3eba4f1cd0b104cde6a89c12
+      size: 667
     - path: jigsaw-toxic-comment-train-processed-seqlen128.csv
       md5: 8d9eb514f85c2f3942fd2e2e481f0bbb
       size: 406706887
     outs:
     - path: cleaned.csv
-      md5: 34f463ed007a663032fbc38eb6751249
-      size: 406739934
+      md5: 906c9e5cf04390ff4adc2b2587bcbb2a
+      size: 40392287
   train:
     cmd: python3 train.py
     deps:
     - path: cleaned.csv
-      md5: 34f463ed007a663032fbc38eb6751249
-      size: 406739934
+      md5: 906c9e5cf04390ff4adc2b2587bcbb2a
+      size: 40392287
     - path: train.py
-      md5: 8b33e14e06c8b582b9e5dda4582ff246
-      size: 1732
+      md5: f990aed8881673937261566f26bfe39b
+      size: 1743
     outs:
     - path: metrics.json
-      md5: 2072fffcfdb12440d4439b1d6982abc3
+      md5: 00a45c27d36dd9738f350c54225d4bab
       size: 56
     - path: report.txt
-      md5: aab40577c023d6755eb0e0eaeb8e9ba5
-      size: 118
+      md5: 6cdb8518624e7ae3e6536605af44ba08
+      size: 114

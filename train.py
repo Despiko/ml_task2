@@ -9,6 +9,8 @@ from sklearn.model_selection import cross_val_score, train_test_split
 from sklearn.metrics import f1_score, confusion_matrix, roc_auc_score
 from nltk.corpus import stopwords
 import json
+import re
+
 
 clean_data = pd.read_csv('cleaned.csv')
 
