@@ -1,10 +1,4 @@
 outs:
-<<<<<<< HEAD
-- md5: 70114121e8bd0bcb8c85f2a2a3971212
-  size: 40866920
-=======
-- md5: 8d9eb514f85c2f3942fd2e2e481f0bbb
-  size: 406706887
->>>>>>> f61a14ce51a32446931d4b9dd3a9d9dbe9e8ea8a
+- md5: eddf40b4cfd6d6a7514cfbfb2d625ea9
+  size: 40866948
   path: jigsaw-toxic-comment-train-processed-seqlen128.csv
-  isexec: true
