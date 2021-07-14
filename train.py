@@ -1,0 +1,43 @@
+import pandas as pd
+import nltk
+nltk.download('wordnet')
+nltk.download('punkt')
+from nltk.stem import WordNetLemmatizer
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import cross_val_score, train_test_split
+from sklearn.metrics import f1_score, confusion_matrix, roc_auc_score
+
+clean_data = pd.read_csv('cleaned.csv')
+
+def lemmatize(text):
+    m = WordNetLemmatizer()
+    lemm_list = m.lemmatize(text)
+    lemm_text = "".join(lemm_list)
+    return lemm_text
+
+corpus = list(clean_data['comment_text'].apply(lambda x: lemmatize(x)))
+
+count_tf_idf = TfidfVectorizer(stop_words = stopwords)
+tf_idf = count_tf_idf.fit_transform(corpus)
+
+features = tf_idf
+target = clean_data['toxic'].values
+
+X_train, X_test, y_train, y_test = train_test_split(features, target, test_size=0.2, random_state=42)
+X_valid, X_test, y_valid, y_test = train_test_split(X_test, y_test, test_size=0.5, random_state=42)
+
+model_reg = LogisticRegression(class_weight = 'balanced')
+
+model_reg.fit(X_train, y_train)
+
+predict_linear = model_reg.predict(X_test)
+
+roc_auc_score(y_test, predict_linear)
+
+f1_lin = f1_score(y_test, predict_linear)
+print('F1 логистической регрессии: {:.4f}'.format(f1_lin))
+print()
+print('Матрица ошибок')
+print(confusion_matrix(y_test, predict_linear))
+print()
