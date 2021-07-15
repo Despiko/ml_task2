@@ -1,4 +1,4 @@
 outs:
 - md5: eddf40b4cfd6d6a7514cfbfb2d625ea9
   size: 40866948
-  path: jigsaw-toxic-comment-train-processed-seqlen128.csv
+  path: jigsaw.csv

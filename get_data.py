@@ -1,7 +1,7 @@
 import pandas as pd
 import re
 
-data = pd.read_csv('jigsaw-toxic-comment-train-processed-seqlen128.csv')
+data = pd.read_csv('jigsaw.csv')
 <<<<<<< HEAD
 =======
 
