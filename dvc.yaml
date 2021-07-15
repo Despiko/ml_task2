@@ -3,7 +3,7 @@ stages:
     cmd: python3 get_data.py
     deps:
     - get_data.py
-    - jigsaw-toxic-comment-train-processed-seqlen128.csv
+    - jigsaw.csv
     outs:
     - cleaned.csv
   train:
