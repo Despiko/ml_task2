@@ -1,6 +1,8 @@
 [core]
-    remote = mydvcremote
+    remote = myremote
 ['remote "mydvcremote"']
     url = gdrive://1551NdxvJOp19qSUCzET2laepgQki6U5Q
     gdrive_client_id = 125543484086-2im6cfkgft76uo89dk06ebtd96qjs4lc.apps.googleusercontent.com
     gdrive_client_secret = CQbIBrNyoXkbIy7eBNtCv55J
+['remote "myremote"']
+    url = gdrive://1rVS3IWMCtUbnDbVkQVgYBldT6tY7mYS5
